@@ -1,0 +1,44 @@
+body{
+  background-image:url("back2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+table,th{
+	border: 1px solid grey;
+	border-collapse: collapse;
+	column-width: 170px;
+	background-color: white;
+	margin-left: 30px;
+}
+
+tr{
+	font-family: Helvetica;
+}
+button{
+	margin-left: 30px;
+	width: 100px;
+	height: 35px;
+	border-radius: 30px;
+	background-color: white;
+	font-family: Helvetica;
+	font-size: 20px;
+}
+
+.first_row{
+	font-family: Helvetica;
+	font-size: 25px;
+}
+
+.ikona{
+  width: 150px;
+}
+
+.titlos{
+  position: relative;
+  left:110px;
+  bottom: 110px;
+  font-family: Helvetica;
+}
+
+

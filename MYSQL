@@ -1,0 +1,13 @@
+// MY SQL
+CREATE TABLE 'USERS'(
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'First_Name' varchar(75) NOT NULL,
+  'Last_Name' varchar(75) NOT NULL,
+  'Email' varchar(100) NOT NULL,
+  'Telephone' int(25) NOT NULL,
+  'Username' varchar(75) NOT NULL,
+  'Password' varchar(250) NOT NULL,
+  Primary key ('id'),
+  Unique key('Email') ('Email')
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_ci AUTO_INCREMENT=1;
