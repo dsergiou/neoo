@@ -1,18 +1,12 @@
-<?php
- define('DBSERVER', 'localhost');//database server
- define('DBNAME', 'demo');//database name
- define('DBLASTNAME', 'demo1');//database lastname
- define('DBEMAIL', 'demo2');// database email
- define('DBTELEPHONE', 'demo3');//database telephone
- define('DBUSERNAME', 'root');//database username
- define('DBPASSWORD', '');//DATABASE Password
+<?php 
+$servername="localhost";
+$username="root";
+$password="D1179S1995";
+$database="DoctorAnyTime";
+$connect=new mysqli($servername,$username,$password,$database);
 
-/*connect to Mysql database*/
-$db = mysqli_connect(DBSERVER,DBNAME,DBLASTNAME,DBEMAIL,DBTELEPHONE,DBUSERNAME,DBPASSWORD)
-
-//check db fann_get_total_connections
-if($db==false){
-    die("Error: connection error". mysql_connect_error());
-}
-
- ?>
+if($connect->connect_error)   
+   echo "connection error:" .$connect->connect_error;
+else
+   echo "connection is created successfully";
+?>

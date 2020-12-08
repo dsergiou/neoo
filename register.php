@@ -1,15 +1,15 @@
 <?php
 require_once "config.php";
 require_once "session.php";
-if ($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST['submit'])){
-  $first_name= trim($_POST['full name']);
-  $last_name= trim($_POST['last name']);
-  $email= trim($_POST['email']);
-  $telephone= trim($_POST['telephone']);
-  $username= trim($_POST['username']);
-  $password= trim($_POST['password']);
+if ($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['submit'])){
+  $first_name= trim($_POST['FirstName']);
+  $last_name= trim($_POST['LastName']);
+  $email= trim($_POST['Email']);
+  $telephone= trim($_POST['Telephone']);
+  $username= trim($_POST['Username']);
+  $password= trim($_POST['Password']);
   $password_hash=password_hash($password, PASSWORD_BCRYPT);
-  if($query = $db->prepare("SELECT * FROM users WHERE email = ?")){
+  if($query = $connect->prepare("SELECT * FROM USERS WHERE Email = ?")){
     $error= '';
     // Bind parameters (s=string i=int b =blob,etc)in our case theusername is a string so weuse "S"
     $query->bind_param('s',$email);
@@ -17,15 +17,15 @@ if ($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST['submit'])){
     // store the result so we can check if the account exists in the database.
     $query->store_result();
       if ($query->num_rows>0){
-        $error.='<p class="error">The email addres is already registered!</p>';
+        $error.='<p class="error">The email address is already registered!</p>';
       }else{
         //valid password
         if(strlen($password)<6){
           $error.= '<p class="error">Password must have atleast 6 characters.</p>';
         }
         if (empty($error)){
-          $insertQuery = $db->prepare("INSERT INTO users (fullname,lastname,email,telephone,username,password) VALUES(?,?,?,?,?,?);");
-          $insertQuery->bind_param("sss",$first_name,$last_name,$email,$telephone,$username,$password_hash);
+          $insertQuery = $connect->prepare("INSERT INTO USERS (FirstName,LastName,Email,Telephone,Username,Password) VALUES(?,?,?,?,?,?);");
+          $insertQuery->bind_param("sssiss",$first_name,$last_name,$email,$telephone,$username,$password_hash);
           $result = $insertQuery->execute();
           if ($result){
             $error.= '<p class="success">Your registration was successful!</p>';
@@ -39,20 +39,20 @@ if ($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST['submit'])){
     $query->close();
     $insertQuery->close();
     // close DB fann_get_total_connection
-    mysqli_close($db);
+    mysqli_close($connect);
 }
  ?>
  <!DOCTYPE html>
  <html>
  	<head>
  		<meta charset="utf-8">
- 		<link rel="stylesheet" href="signup.css">
+ 		<link rel="stylesheet" href="register.php">
  		<title>SignUp Form</title>
  	</head>
  	<body>
  		<header>
          <span>
-         <a href="./home.html"><img class="ikona" src="logo.png"></a>
+         <a href="./welcome.php"><img class="ikona" src="logo.png"></a>
            <div class="titlos">
                <h2>Doctor Any Time</h2>
            </div>
@@ -85,8 +85,67 @@ if ($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST['submit'])){
              <h5 style="font-family: Helvetica">By creating an account you agree to our <a href="#" style="color:dodgerblue" "font-family: Helvetica">Terms & Privacy</a>.</h5>
  		</div>
  		<div class="butt">
- 	  	<a href="./home.html"><button>Cancel</button></a>
- 	  	<a href="#"><button>Sign Up</button></a>
+ 	  	<a href="./welcome.php"><button>Cancel</button></a>
+ 	  	<a href="search2.html"><button name="submit" type="submit" value="signup">Sign Up</button></a>
  	  </div>
  	</body>
  </html>
+<!DOCTYPE html>
+<html>
+<style>
+	body{
+	  background-image:url("back2.jpg");
+	  background-size: cover;
+	  background-attachment: fixed;
+	}
+	form{
+		font-family: Helvetica;
+		font-weight: bold;
+	}
+	button{
+	  width: 100px;
+	  height: 35px;
+	  border-radius: 30px;
+	  background-color: white;
+	  font-family: Helvetica;
+	  text-decoration: bold;
+	  font-size: 20px;
+	  display: inline-block;
+	}
+	.titlos{
+	  position: relative;
+	  left:110px;
+	  bottom: 110px;
+	  font-family: Helvetica;
+	  color: white;
+	}
+	.div2{
+		margin-left: 480px;
+		width: 400px;
+		height: 430px;
+
+	}
+	.ikona{
+	  width: 150px;
+	}
+	.lnamebox{
+		margin-left: 1px;
+	}
+	.emailbox{
+		margin-left: 40px;
+	}
+	.phonebox{
+		margin-left: 3px;
+	}
+	.usernamebox{
+		margin-left: 5px;
+	}
+	.passbox{
+		margin-left: 6px;
+	}
+	.butt{
+		margin-left: 470px;
+		margin-bottom: 230px;
+	}
+</style>
+</html>
