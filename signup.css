@@ -1,0 +1,54 @@
+body{
+  background-image:url("back2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+form{
+	font-family: Helvetica;
+	font-weight: bold;
+}
+button{
+  width: 100px;
+  height: 35px;
+  border-radius: 30px;
+  background-color: white;
+  font-family: Helvetica;
+  text-decoration: bold;
+  font-size: 20px;
+  display: inline-block;
+}
+.titlos{
+  position: relative;
+  left:110px;
+  bottom: 110px;
+  font-family: Helvetica;
+  color: white;
+}
+.div2{
+	margin-left: 480px;
+	width: 400px;
+	height: 430px;
+
+}
+.ikona{
+  width: 150px;
+}
+.lnamebox{
+	margin-left: 1px;
+}
+.emailbox{
+	margin-left: 40px;
+}
+.phonebox{
+	margin-left: 3px;
+}
+.usernamebox{
+	margin-left: 5px;
+}
+.passbox{
+	margin-left: 6px;
+}
+.butt{
+	margin-left: 470px;
+	margin-bottom: 230px;
+}

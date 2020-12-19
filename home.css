@@ -1,0 +1,44 @@
+body{
+  background-image:url("back2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+button{
+  width: 100px;
+  height: 35px;
+  border-radius: 30px;
+  background-color: white;
+  font-family: Helvetica;
+  text-decoration: bold;
+  font-size: 20px;
+}
+.titlos{
+  position: relative;
+  left:110px;
+  bottom: 110px;
+  font-family: Helvetica;
+  color: white;
+}
+.ikona{
+  width: 150px;
+}
+.descr{
+	background-color: transparent;
+	width: 800px;
+	height: 300px;
+	margin-left: 200px;
+	margin-top: -170px;
+	font-family: Helvetica;
+	color: white;
+}
+.butt{
+	margin-left: 30px;
+	margin-top: -30px;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+.footer-nav{
+	text-align: center;
+	margin-top: 30px;
+}
