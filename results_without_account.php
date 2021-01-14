@@ -16,6 +16,7 @@
 	   
 		    <table align="center">
 		    	<tr class="first_row">
+				<th>Code</th>
 		    		<th>First Name</th>
 		    		<th>Last Name</th>
 		    		<th>Provider</th>
@@ -27,11 +28,11 @@
 		    if($conn-> connect_error){
 		    	die("Connection failed" . $conn-> connect_error);
 		    }
-    $sql = "SELECT firstname, lastname, provider, city, specialty FROM Providers;";
+    $sql = "SELECT code, firstname, lastname, provider, city, specialty FROM Providers;";
     $result = $conn-> query($sql);
 		   if($result-> num_rows > 0){
 		    	while($row = $result-> fetch_assoc()){
-		    	echo "<tr><td>" . $row["firstname"] . "</td><td>" . $row["lastname"] . "</td><td>" . $row["provider"] . "</td><td>" . $row["city"] . "</td><td>" . $row["specialty"] . "</td></tr>";
+		    	echo "<tr><td>" . $row["code"] ."</td><td>" . $row["firstname"] . "</td><td>" . $row["lastname"] . "</td><td>" . $row["provider"] . "</td><td>" . $row["city"] . "</td><td>" . $row["specialty"] . "</td></tr>";
 		    	}
 		    echo "</table>";
 		    }
