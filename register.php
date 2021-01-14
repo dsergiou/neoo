@@ -36,13 +36,13 @@
  				<input class="usernamebox"  type="text" name="username">
  				<br><br>
  				<label for="pass">Password: </label>
- 				<input class="passbox" type="text" name="pass">
+ 				<input class="passbox" placeholder="At least 6 characters"type="text" name="pass">
 
 			         <p style="color: red" "font-family: Hevletica">*All fields are required.</p>
              <h5 style="font-family: Helvetica">By creating an account you agree to our <a href="#" style="color:dodgerblue" "font-family: Helvetica">Terms & Privacy</a>.</h5>
  		</div>
  		<div class="butt">
- 	  	<button><a href="./welcome.php">Cancel</a></button>
+ 	  	<a href="./welcome.php"><button style= "text-decoration:none;color:black">Cancel</button></a>
  	  	<button name="submit" type="submit" value="signup">Sign Up</button>
  	  </div>
 
@@ -132,4 +132,3 @@ if ($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['submit'])){
 }
  ?>
  
-
