@@ -5,6 +5,8 @@
 		<title>Doctors</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="results.css">
+	        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.-/css/font-awesome.min.css"/>
+
 	</head>
 	<body>
 		<header>
@@ -18,6 +20,7 @@
 
         <table align="center">
             <tr class="first_row">
+		<th>Code</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Provider</th>
@@ -34,6 +37,7 @@
                 $counter = 0;
                 foreach($results as $person){
                     echo "<tr class='".$counter."_row'>".
+			"<td>'".$person["code"]."'</td>".
                         "<td>'".$person["firstname"]."'</td>".
 		    		"<td>'".$person["lastname"]."'</td>".
 		    		"<td>'".$person["provider"]."'</td>".
@@ -53,12 +57,35 @@
 
 
 		    </table>
-		   
-		    <p><a href="./search2.php" target="_self"><button>Back</button></table></p>
+		    
+
+		    <p><a href="./search2.php" target="_self"><button>Back</button></table></a></p>
+		<div class="kumpi">
+		<i class="fa fa-info-circle"></i>
+		<i class="fa fa-info-circle" style="font-size:24px"></i>
+		<i class="fa fa-info-circle" style="font-size:36px"></i>
+		<i class="fa fa-info-circle" style="font-size:48px;color:red"></i>
+		<br>
+
+		<h2>Book an appointment:</h2>
+		<a href="./calendar.php"<button style="font-size:24px;text-decoration:none;color:inherit">Click Here <i class="fa fa-info-circle"></i></button></a>
+</div>
 		    <br><br><br><br><br><br><br><br><br><br><br><hr>
 		    <nav class="footer-nav" role="navigation">
 				<p>Copyright &copy;
 				  2020 Doctor Any Time. All rights reserved.</p>
 		    </nav>	
 	</body>
+<html>
+ <head>
+ <style>
+  .kumpi{
+	position:relative;
+	bottom:50px;
+	left:30px;
+	
+}
+ </style>
+ </head>
+</html>
 </html>
