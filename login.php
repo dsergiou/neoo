@@ -24,15 +24,22 @@
 				<br><br>
 				<label for="pass">Password: </label>
 				<input class="passbox" type="text" name="pass" required>
-			
 			<p style="color: red" "font-family: Hevletica">*All fields are required.</p>
 
 			<button name="submit" type="submit" value="login">Login</button>
 	  		<input class="remember" type="checkbox" checked="checked" name="remember"> Remember me
 	  		<h5 style="font-family: Helvetica">Don't have an account yet? Sign Up<a href="./register.php" style="color:dodgerblue" "font-family: Helvetica"> here</a>.</h5> 
+ 
+		 
 			
 		</div>
+
 </form>
+<br><br><br><br><hr>
+		  <nav class="footer-nav" role="navigation">
+				<p>Copyright &copy;
+				  2020 Doctor Any Time. All rights reserved.</p>
+		  </nav>
 	</body>
 </html>
 
